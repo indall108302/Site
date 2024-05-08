@@ -1,0 +1,199 @@
+html,
+body {
+    font-family: "Arial";
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+}
+
+.game-list-item img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+a {
+  color: #0059b2;
+  text-decoration: none;
+}
+a:hover {
+  color: #cc0000;
+  text-decoration: underline;
+}
+
+li {
+  list-style-type: none;
+}
+
+.game-list div {
+    width: 371px;
+    height: 371px;
+    border: 1px solid;
+    margin: 10px 10px 0px 0px;
+    border-radius: 20px;
+r}
+
+.header {
+  background: black;
+  height: 60px;
+}
+
+ul.mainmenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  color: #ffffff;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+ul.mainmenu li {
+  float: left;
+  margin: 18px 40px 0 30px;
+}
+
+ul.mainmenu li.last {
+  float: right;
+}
+
+ul.mainmenu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+ul.mainmenu li a:hover {
+  color: #ffffff;
+}
+
+ul.genre-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+ul.genre-list li {
+    margin: 10px;
+    padding: 10px;
+    background: #333;
+    border-radius: 10px;
+}
+
+ul.genre-list li p {
+  font-size: large;
+}
+
+.game-list {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.genre-menu {
+    background: #111;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: block;
+}
+
+.selected {
+  color: white;
+}
+
+.form-input {
+  width: 300px;
+  font-size: 16px;
+}
+
+.form-label {
+  display: inline-block;
+  min-width: 150px;
+  vertical-align: top;
+}
+
+.form-error ul {
+  list-style: none;
+  padding: 0;
+  color: #cc0000;
+}
+
+.form-button {
+  min-width: 200px;
+  font-size: 16px;
+}
+
+.content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.add-page {
+    padding: 20px;
+    margin: 40px;
+    box-sizing: border-box;
+    background: #777;
+    border-radius: 20px;
+}
+
+.main {
+    padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
+    background: #222;
+    color: white;
+}
+
+.genre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.game-page h2 {
+    border-bottom: 1px solid;
+}
+
+.game-page-poster img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    height: 500px;
+    border: 3px solid black;
+}
+
+#game-page-genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#game-page-genre-list li {
+    margin: 10px 10px 0px 0px;
+}
+
+#confirm {
+    padding: 30px;
+    margin: 30px;
+    border-radius: 20px;
+    border: 3px solid;
+    background: white;
+}
+
+.register-done-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admit-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

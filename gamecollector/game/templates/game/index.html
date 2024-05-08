@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<input id="show-list" type="button" value="Жанры">
+<div class="genre-menu" id="show-hide">
+    <ul class="genre-list">
+        {% if genre_show == 0 or genre_show is None%}
+        <li class="selected">Все жанры</li>
+        {% else %}
+        <li><a href="{% url 'home' %}">Все жанры</a></li>
+        {% endif %}
+
+        {% for genre in genre_list %}
+            {% if genre.id == genre_show %}
+                <li class="selected">{{ genre.title }}</li>
+            {% else %}
+                <li><a href="{{ genre.get_absolute_url }}">{{ genre.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", hiddenCloseclick());
+  document.getElementById('show-list').addEventListener("click", hiddenCloseclick);
+	function hiddenCloseclick() {
+	let x = document.getElementById('show-hide');
+      if (x.style.display == "block"){
+	    x.style.display = "none";
+	  } else {
+	    x.style.display = "block"}
+    };
+</script>
+
+<div class="content">
+    <h1>{{ title }}</h1>
+    <div class="game-list">
+        {% for g in games %}
+        <div class="game-list-item">
+            {% if g.poster %}
+                <a href="{{ g.get_absolute_url }}"><img src="{{ g.poster.url }}"></a>
+            {% else %}
+                <a href="{{ g.get_absolute_url }}">{{ g.title }}</a>
+            {% endif%}
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+

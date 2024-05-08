@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="game-page">
+        {% if game.poster %}
+        <div class="game-page-poster">
+        <img src="{{ game.poster.url }}">
+            </div>
+        {% endif %}
+
+        <h1>{{ game.title }}</h1>
+
+        <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Оценить</button>
+        </form>
+
+        <h2>Дата выхода: {{ game.release_year }}</h2>
+
+        <h2>Студия: {{ game.studio }}</h2>
+        {% with game.genre.all as game_genre_list %}
+        {% if game_genre_list %}
+        <div class="genre">
+        <h2>Жанр:</h2>
+        <ul id="game-page-genre-list">
+            {% for genre in game_genre_list %}
+                <li><a href="{{ genre.get_absolute_url }}">{{ genre.title }}</a></li>
+            {% endfor %}
+        </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <h2>Об игре: </h2>
+        <p>{{ game.plot }}</p>
+
+</div>
+{% endblock %}
